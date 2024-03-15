@@ -3,23 +3,45 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/appBackground"
+                                                   android:id="@+id/backGround">
 
     <TextView
-            android:text="@string/welcome_text"
-            android:layout_width="220dp"
-            android:layout_height="0dp" android:id="@+id/startText"
-            android:textSize="20sp" android:textAlignment="center"
-            android:layout_marginTop="339dp" android:layout_marginBottom="276dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/btnChangeText"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"/>
-    <Button
-            android:text="Click here"
+            android:id="@+id/counterTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnChangeText"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startText" android:layout_marginEnd="140dp"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="124dp"
+            tools:layout_editor_absoluteY="48dp"/>
+
+    <Button
+            android:id="@+id/clickButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click me"
+            android:onClick="onClick"
+            app:layout_constraintTop_toBottomOf="@+id/counterTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/resetButton"
+            android:layout_marginEnd="27dp"
+            android:layout_marginTop="28dp"/>
+
+    <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="onResetClick"
+            app:layout_constraintTop_toBottomOf="@+id/counterTextView"
+            app:layout_constraintStart_toEndOf="@+id/clickButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="28dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
